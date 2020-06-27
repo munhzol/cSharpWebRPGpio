@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card-body">
+            <h5 class="card-title text-right"><sup>o</sup> C | F</h5>
+            <div class="text-center" style="font-size: 120px;">
+                @ViewBag.temp
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+
+        <div class="card mb-3">
+            <div class="card-header">
+                LED
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    @if(@ViewBag.green==1){
+                        <a href="/light/green/0" class="btn btn-success">Green Led</a>
+                    } else {
+                        <a href="/light/green/1" class="btn btn-outline-success">Green Led</a>
+                    }
+
+                    @if(@ViewBag.red==1){
+                        <a href="/light/red/0" class="btn btn-danger">Red Led</a>
+                    } else {
+                        <a href="/light/red/1" class="btn btn-outline-danger">Red Led</a>
+                    }
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Motor
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    
+                    <input type="range" id="range" class="custom-range" min="0" max="180" step="10" value="@ViewBag.motor">
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
